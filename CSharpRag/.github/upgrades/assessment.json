@@ -1,0 +1,763 @@
+{
+  "settings": {
+    "components": {
+      "code": false,
+      "binaries": false
+    },
+    "targetId": "net10.0",
+    "targetDisplayName": ".NETCoreApp,Version=v10.0"
+  },
+  "analysisStartTime": "2026-02-13T01:13:25.0370838Z",
+  "analysisEndTime": "2026-02-13T01:13:29.5192991Z",
+  "privacyModeHelpUrl": "https://go.microsoft.com/fwlink/?linkid=2270980",
+  "stats": {
+    "summary": {
+      "projects": 2,
+      "issues": 5,
+      "incidents": 24,
+      "effort": 24
+    },
+    "charts": {
+      "severity": {
+        "Mandatory": 1,
+        "Optional": 1,
+        "Potential": 22,
+        "Information": 0
+      },
+      "category": {
+        "NuGet": 4,
+        "Project": 1,
+        "Api": 19
+      }
+    }
+  },
+  "projects": [
+    {
+      "path": "CSharpRagApp\\CSharpRagApp.csproj",
+      "startingProject": true,
+      "issues": 5,
+      "storyPoints": 24,
+      "properties": {
+        "appName": "CSharpRagApp",
+        "projectKind": "DotNetCoreApp",
+        "frameworks": [
+          "net8.0"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "numberOfFiles": 3,
+        "numberOfCodeFiles": 3,
+        "linesTotal": 381,
+        "linesOfCode": 381,
+        "totalApiScanned": 472,
+        "minLinesOfCodeToChange": 19,
+        "maxLinesOfCodeToChange": 19
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "cbd15b85-ec01-448e-970b-13eb68f9fbaa",
+          "ruleId": "NuGet.0002",
+          "projectPath": "CSharpRagApp\\CSharpRagApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Extensions.Configuration, 8.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration, and replace with new package Microsoft.Extensions.Configuration 10.0.3",
+              "protected": "Microsoft.Extensions.Configuration, 8.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration, and replace with new package Microsoft.Extensions.Configuration 10.0.3"
+            },
+            "kind": "File",
+            "path": "CSharpRagApp\\CSharpRagApp.csproj",
+            "snippet": "Microsoft.Extensions.Configuration, 8.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration, and replace with new package Microsoft.Extensions.Configuration 10.0.3",
+            "protectedSnippet": "Microsoft.Extensions.Configuration, 8.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration, and replace with new package Microsoft.Extensions.Configuration 10.0.3",
+            "label": "Microsoft.Extensions.Configuration 8.0.0",
+            "properties": {
+              "PackageId": "Microsoft.Extensions.Configuration",
+              "PackageVersion": "8.0.0",
+              "PackageNewVersion": "10.0.3",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "63022172-1832-4e20-82a6-15aece87add7",
+          "ruleId": "NuGet.0002",
+          "projectPath": "CSharpRagApp\\CSharpRagApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Extensions.Configuration.EnvironmentVariables, 8.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration.EnvironmentVariables, and replace with new package Microsoft.Extensions.Configuration.EnvironmentVariables 10.0.3",
+              "protected": "Microsoft.Extensions.Configuration.EnvironmentVariables, 8.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration.EnvironmentVariables, and replace with new package Microsoft.Extensions.Configuration.EnvironmentVariables 10.0.3"
+            },
+            "kind": "File",
+            "path": "CSharpRagApp\\CSharpRagApp.csproj",
+            "snippet": "Microsoft.Extensions.Configuration.EnvironmentVariables, 8.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration.EnvironmentVariables, and replace with new package Microsoft.Extensions.Configuration.EnvironmentVariables 10.0.3",
+            "protectedSnippet": "Microsoft.Extensions.Configuration.EnvironmentVariables, 8.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration.EnvironmentVariables, and replace with new package Microsoft.Extensions.Configuration.EnvironmentVariables 10.0.3",
+            "label": "Microsoft.Extensions.Configuration.EnvironmentVariables 8.0.0",
+            "properties": {
+              "PackageId": "Microsoft.Extensions.Configuration.EnvironmentVariables",
+              "PackageVersion": "8.0.0",
+              "PackageNewVersion": "10.0.3",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "0957e42b-2a03-473d-8d52-e2c20d123a84",
+          "ruleId": "NuGet.0002",
+          "projectPath": "CSharpRagApp\\CSharpRagApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Extensions.Configuration.Json, 8.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration.Json, and replace with new package Microsoft.Extensions.Configuration.Json 10.0.3",
+              "protected": "Microsoft.Extensions.Configuration.Json, 8.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration.Json, and replace with new package Microsoft.Extensions.Configuration.Json 10.0.3"
+            },
+            "kind": "File",
+            "path": "CSharpRagApp\\CSharpRagApp.csproj",
+            "snippet": "Microsoft.Extensions.Configuration.Json, 8.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration.Json, and replace with new package Microsoft.Extensions.Configuration.Json 10.0.3",
+            "protectedSnippet": "Microsoft.Extensions.Configuration.Json, 8.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration.Json, and replace with new package Microsoft.Extensions.Configuration.Json 10.0.3",
+            "label": "Microsoft.Extensions.Configuration.Json 8.0.0",
+            "properties": {
+              "PackageId": "Microsoft.Extensions.Configuration.Json",
+              "PackageVersion": "8.0.0",
+              "PackageNewVersion": "10.0.3",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "22c14c3e-c478-494d-ac4d-91dbb94ee605",
+          "ruleId": "NuGet.0005",
+          "projectPath": "CSharpRagApp\\CSharpRagApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Azure.Identity, 1.13.2\n\nRecommendation:\n\nThis version takes a dependency on a deprecated version of MSAL .NET (Microsoft.Identity.Client).\nRemove Azure.Identity, and replace with new package Azure.Identity, 1.17.1",
+              "protected": "Azure.Identity, 1.13.2\n\nRecommendation:\n\nThis version takes a dependency on a deprecated version of MSAL .NET (Microsoft.Identity.Client).\nRemove Azure.Identity, and replace with new package Azure.Identity, 1.17.1"
+            },
+            "kind": "File",
+            "path": "CSharpRagApp\\CSharpRagApp.csproj",
+            "snippet": "Azure.Identity, 1.13.2\n\nRecommendation:\n\nThis version takes a dependency on a deprecated version of MSAL .NET (Microsoft.Identity.Client).\nRemove Azure.Identity, and replace with new package Azure.Identity, 1.17.1",
+            "protectedSnippet": "Azure.Identity, 1.13.2\n\nRecommendation:\n\nThis version takes a dependency on a deprecated version of MSAL .NET (Microsoft.Identity.Client).\nRemove Azure.Identity, and replace with new package Azure.Identity, 1.17.1",
+            "label": "Azure.Identity 1.13.2",
+            "properties": {
+              "PackageId": "Azure.Identity",
+              "PackageVersion": "1.13.2",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "2dd58b64-4fb9-4ae3-aa1d-36115f0ac5d7",
+          "ruleId": "Project.0002",
+          "projectPath": "CSharpRagApp\\CSharpRagApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: net8.0\nRecommended target framework: net10.0",
+              "protected": "Current target framework: net8.0\nRecommended target framework: net10.0"
+            },
+            "kind": "File",
+            "path": "CSharpRagApp\\CSharpRagApp.csproj",
+            "snippet": "Current target framework: net8.0\nRecommended target framework: net10.0",
+            "protectedSnippet": "Current target framework: net8.0\nRecommended target framework: net10.0",
+            "properties": {
+              "CurrentTargetFramework": "net8.0",
+              "RecommendedTargetFramework": "net10.0"
+            }
+          }
+        },
+        {
+          "incidentId": "72fcb01c-3dee-40a8-b6e7-6d39635f3137",
+          "ruleId": "Api.0003",
+          "description": "Nullable JsonDocument properties deserialize to JsonValueKind.Null ",
+          "projectPath": "CSharpRagApp\\CSharpRagApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "using var doc = JsonDocument.Parse(jsonResponse);",
+              "protected": "T:System.Text.Json.JsonDocument"
+            },
+            "kind": "File",
+            "path": "CSharpRagApp\\Services\\CitationParser.cs",
+            "snippet": "using var doc = JsonDocument.Parse(jsonResponse);",
+            "protectedSnippet": "T:System.Text.Json.JsonDocument",
+            "label": "T:System.Text.Json.JsonDocument",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/serialization/9.0/jsondocument-props.md",
+                "isCustom": false
+              }
+            ],
+            "line": 37,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "1f9054fc-bc7c-4a81-992b-277e4cb5f125",
+          "ruleId": "Api.0003",
+          "description": "Nullable JsonDocument properties deserialize to JsonValueKind.Null ",
+          "projectPath": "CSharpRagApp\\CSharpRagApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "using var doc = JsonDocument.Parse(jsonResponse);",
+              "protected": "T:System.Text.Json.JsonDocument"
+            },
+            "kind": "File",
+            "path": "CSharpRagApp\\Services\\CitationParser.cs",
+            "snippet": "using var doc = JsonDocument.Parse(jsonResponse);",
+            "protectedSnippet": "T:System.Text.Json.JsonDocument",
+            "label": "T:System.Text.Json.JsonDocument",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/serialization/9.0/jsondocument-props.md",
+                "isCustom": false
+              }
+            ],
+            "line": 37,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "ce594dd4-3e1f-4012-acc1-6b95a2efd9aa",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Memory.Data, 8.0.0. Add package reference to System.Memory.Data, 8.0.0",
+          "projectPath": "CSharpRagApp\\CSharpRagApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Console.WriteLine($\u0022Response: {rawResponse.Content}\u0022);",
+              "protected": "T:System.BinaryData"
+            },
+            "kind": "File",
+            "path": "CSharpRagApp\\Program.cs",
+            "snippet": "Console.WriteLine($\u0022Response: {rawResponse.Content}\u0022);",
+            "protectedSnippet": "T:System.BinaryData",
+            "label": "T:System.BinaryData",
+            "properties": {
+              "PackageId": "System.Memory.Data",
+              "PackageNewVersion": "8.0.0"
+            },
+            "line": 194,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "e880bd91-7e74-4672-9c37-df0c003292f7",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.ClientModel, 1.1.0-beta.4. Add package reference to System.ClientModel, 1.1.0-beta.4",
+          "projectPath": "CSharpRagApp\\CSharpRagApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Console.WriteLine($\u0022Response: {rawResponse.Content}\u0022);",
+              "protected": "P:System.ClientModel.Primitives.PipelineResponse.Content"
+            },
+            "kind": "File",
+            "path": "CSharpRagApp\\Program.cs",
+            "snippet": "Console.WriteLine($\u0022Response: {rawResponse.Content}\u0022);",
+            "protectedSnippet": "P:System.ClientModel.Primitives.PipelineResponse.Content",
+            "label": "P:System.ClientModel.Primitives.PipelineResponse.Content",
+            "properties": {
+              "PackageId": "System.ClientModel",
+              "PackageNewVersion": "1.1.0-beta.4"
+            },
+            "line": 194,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "8919f644-f6b4-4052-b861-c911786f78fc",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.ClientModel, 1.1.0-beta.4. Add package reference to System.ClientModel, 1.1.0-beta.4",
+          "projectPath": "CSharpRagApp\\CSharpRagApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var rawResponse = ex.GetRawResponse();",
+              "protected": "T:System.ClientModel.Primitives.PipelineResponse"
+            },
+            "kind": "File",
+            "path": "CSharpRagApp\\Program.cs",
+            "snippet": "var rawResponse = ex.GetRawResponse();",
+            "protectedSnippet": "T:System.ClientModel.Primitives.PipelineResponse",
+            "label": "T:System.ClientModel.Primitives.PipelineResponse",
+            "properties": {
+              "PackageId": "System.ClientModel",
+              "PackageNewVersion": "1.1.0-beta.4"
+            },
+            "line": 191,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "04cc3e69-e57c-4d71-aae5-f7b9a17046ce",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.ClientModel, 1.1.0-beta.4. Add package reference to System.ClientModel, 1.1.0-beta.4",
+          "projectPath": "CSharpRagApp\\CSharpRagApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var rawResponse = ex.GetRawResponse();",
+              "protected": "M:System.ClientModel.ClientResultException.GetRawResponse"
+            },
+            "kind": "File",
+            "path": "CSharpRagApp\\Program.cs",
+            "snippet": "var rawResponse = ex.GetRawResponse();",
+            "protectedSnippet": "M:System.ClientModel.ClientResultException.GetRawResponse",
+            "label": "M:System.ClientModel.ClientResultException.GetRawResponse",
+            "properties": {
+              "PackageId": "System.ClientModel",
+              "PackageNewVersion": "1.1.0-beta.4"
+            },
+            "line": 191,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "70c12bab-dba6-47a8-bc21-f39009f2a212",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.ClientModel, 1.1.0-beta.4. Add package reference to System.ClientModel, 1.1.0-beta.4",
+          "projectPath": "CSharpRagApp\\CSharpRagApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Console.WriteLine($\u0022Status: {ex.Status}\u0022);",
+              "protected": "P:System.ClientModel.ClientResultException.Status"
+            },
+            "kind": "File",
+            "path": "CSharpRagApp\\Program.cs",
+            "snippet": "Console.WriteLine($\u0022Status: {ex.Status}\u0022);",
+            "protectedSnippet": "P:System.ClientModel.ClientResultException.Status",
+            "label": "P:System.ClientModel.ClientResultException.Status",
+            "properties": {
+              "PackageId": "System.ClientModel",
+              "PackageNewVersion": "1.1.0-beta.4"
+            },
+            "line": 189,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "b3d65a39-4dc2-4a78-a910-e33ebcb8a3e2",
+          "ruleId": "Api.0003",
+          "description": "Nullable JsonDocument properties deserialize to JsonValueKind.Null ",
+          "projectPath": "CSharpRagApp\\CSharpRagApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "using var doc = System.Text.Json.JsonDocument.Parse(jsonContent);",
+              "protected": "T:System.Text.Json.JsonDocument"
+            },
+            "kind": "File",
+            "path": "CSharpRagApp\\Program.cs",
+            "snippet": "using var doc = System.Text.Json.JsonDocument.Parse(jsonContent);",
+            "protectedSnippet": "T:System.Text.Json.JsonDocument",
+            "label": "T:System.Text.Json.JsonDocument",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/serialization/9.0/jsondocument-props.md",
+                "isCustom": false
+              }
+            ],
+            "line": 145,
+            "column": 20
+          }
+        },
+        {
+          "incidentId": "1ea850b6-fca2-41ab-a779-aec62fa48389",
+          "ruleId": "Api.0003",
+          "description": "Nullable JsonDocument properties deserialize to JsonValueKind.Null ",
+          "projectPath": "CSharpRagApp\\CSharpRagApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "using var doc = System.Text.Json.JsonDocument.Parse(jsonContent);",
+              "protected": "T:System.Text.Json.JsonDocument"
+            },
+            "kind": "File",
+            "path": "CSharpRagApp\\Program.cs",
+            "snippet": "using var doc = System.Text.Json.JsonDocument.Parse(jsonContent);",
+            "protectedSnippet": "T:System.Text.Json.JsonDocument",
+            "label": "T:System.Text.Json.JsonDocument",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/serialization/9.0/jsondocument-props.md",
+                "isCustom": false
+              }
+            ],
+            "line": 145,
+            "column": 20
+          }
+        },
+        {
+          "incidentId": "f425e0e1-08bb-4ce3-aaae-eb3459eff680",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Memory.Data, 8.0.0. Add package reference to System.Memory.Data, 8.0.0",
+          "projectPath": "CSharpRagApp\\CSharpRagApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var jsonContent = rawResponse.Content.ToString();",
+              "protected": "T:System.BinaryData"
+            },
+            "kind": "File",
+            "path": "CSharpRagApp\\Program.cs",
+            "snippet": "var jsonContent = rawResponse.Content.ToString();",
+            "protectedSnippet": "T:System.BinaryData",
+            "label": "T:System.BinaryData",
+            "properties": {
+              "PackageId": "System.Memory.Data",
+              "PackageNewVersion": "8.0.0"
+            },
+            "line": 143,
+            "column": 20
+          }
+        },
+        {
+          "incidentId": "38d076fd-45f1-4b7f-9ee4-3d99d2253fce",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.ClientModel, 1.1.0-beta.4. Add package reference to System.ClientModel, 1.1.0-beta.4",
+          "projectPath": "CSharpRagApp\\CSharpRagApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var jsonContent = rawResponse.Content.ToString();",
+              "protected": "P:System.ClientModel.Primitives.PipelineResponse.Content"
+            },
+            "kind": "File",
+            "path": "CSharpRagApp\\Program.cs",
+            "snippet": "var jsonContent = rawResponse.Content.ToString();",
+            "protectedSnippet": "P:System.ClientModel.Primitives.PipelineResponse.Content",
+            "label": "P:System.ClientModel.Primitives.PipelineResponse.Content",
+            "properties": {
+              "PackageId": "System.ClientModel",
+              "PackageNewVersion": "1.1.0-beta.4"
+            },
+            "line": 143,
+            "column": 20
+          }
+        },
+        {
+          "incidentId": "6774659e-181e-4f6c-918f-1472ee8a7b3f",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Memory.Data, 8.0.0. Add package reference to System.Memory.Data, 8.0.0",
+          "projectPath": "CSharpRagApp\\CSharpRagApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var jsonContent = rawResponse.Content.ToString();",
+              "protected": "M:System.BinaryData.ToString"
+            },
+            "kind": "File",
+            "path": "CSharpRagApp\\Program.cs",
+            "snippet": "var jsonContent = rawResponse.Content.ToString();",
+            "protectedSnippet": "M:System.BinaryData.ToString",
+            "label": "M:System.BinaryData.ToString",
+            "properties": {
+              "PackageId": "System.Memory.Data",
+              "PackageNewVersion": "8.0.0"
+            },
+            "line": 143,
+            "column": 20
+          }
+        },
+        {
+          "incidentId": "c933f63c-b1fa-440a-b9c9-bc4bc102ea38",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.ClientModel, 1.1.0-beta.4. Add package reference to System.ClientModel, 1.1.0-beta.4",
+          "projectPath": "CSharpRagApp\\CSharpRagApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var rawResponse = response.GetRawResponse();",
+              "protected": "T:System.ClientModel.Primitives.PipelineResponse"
+            },
+            "kind": "File",
+            "path": "CSharpRagApp\\Program.cs",
+            "snippet": "var rawResponse = response.GetRawResponse();",
+            "protectedSnippet": "T:System.ClientModel.Primitives.PipelineResponse",
+            "label": "T:System.ClientModel.Primitives.PipelineResponse",
+            "properties": {
+              "PackageId": "System.ClientModel",
+              "PackageNewVersion": "1.1.0-beta.4"
+            },
+            "line": 140,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "375250cd-a5b7-4731-b884-0c3c128a3833",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.ClientModel, 1.1.0-beta.4. Add package reference to System.ClientModel, 1.1.0-beta.4",
+          "projectPath": "CSharpRagApp\\CSharpRagApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var rawResponse = response.GetRawResponse();",
+              "protected": "M:System.ClientModel.ClientResult.GetRawResponse"
+            },
+            "kind": "File",
+            "path": "CSharpRagApp\\Program.cs",
+            "snippet": "var rawResponse = response.GetRawResponse();",
+            "protectedSnippet": "M:System.ClientModel.ClientResult.GetRawResponse",
+            "label": "M:System.ClientModel.ClientResult.GetRawResponse",
+            "properties": {
+              "PackageId": "System.ClientModel",
+              "PackageNewVersion": "1.1.0-beta.4"
+            },
+            "line": 140,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "017657a4-56a0-4c8e-ae75-b563d4c17743",
+          "ruleId": "Api.0003",
+          "description": "Breaking change: URI length limits removed ",
+          "projectPath": "CSharpRagApp\\CSharpRagApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var dataSource = new AzureSearchChatDataSource\r\n        {\r\n            Endpoint = new Uri(searchEndpoint),\r\n            IndexName = searchIndex,\r\n            Authentication = searchAuth\r\n        };",
+              "protected": "T:System.Uri"
+            },
+            "kind": "File",
+            "path": "CSharpRagApp\\Program.cs",
+            "snippet": "var dataSource = new AzureSearchChatDataSource\r\n        {\r\n            Endpoint = new Uri(searchEndpoint),\r\n            IndexName = searchIndex,\r\n            Authentication = searchAuth\r\n        };",
+            "protectedSnippet": "T:System.Uri",
+            "label": "T:System.Uri",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/networking/10.0/uri-length-limits-removed.md",
+                "isCustom": false
+              }
+            ],
+            "line": 62,
+            "column": 8
+          }
+        },
+        {
+          "incidentId": "0233fdaf-d0ab-475c-ba16-a4f54447b32a",
+          "ruleId": "Api.0003",
+          "description": "Breaking change: URI length limits removed ",
+          "projectPath": "CSharpRagApp\\CSharpRagApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var dataSource = new AzureSearchChatDataSource\r\n        {\r\n            Endpoint = new Uri(searchEndpoint),\r\n            IndexName = searchIndex,\r\n            Authentication = searchAuth\r\n        };",
+              "protected": "M:System.Uri.#ctor(System.String)"
+            },
+            "kind": "File",
+            "path": "CSharpRagApp\\Program.cs",
+            "snippet": "var dataSource = new AzureSearchChatDataSource\r\n        {\r\n            Endpoint = new Uri(searchEndpoint),\r\n            IndexName = searchIndex,\r\n            Authentication = searchAuth\r\n        };",
+            "protectedSnippet": "M:System.Uri.#ctor(System.String)",
+            "label": "M:System.Uri.#ctor(System.String)",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/networking/10.0/uri-length-limits-removed.md",
+                "isCustom": false
+              }
+            ],
+            "line": 62,
+            "column": 8
+          }
+        },
+        {
+          "incidentId": "16ee0a12-6dfe-47ba-9a23-eb05a6f2774e",
+          "ruleId": "Api.0003",
+          "description": "Breaking change: URI length limits removed ",
+          "projectPath": "CSharpRagApp\\CSharpRagApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var dataSource = new AzureSearchChatDataSource\r\n        {\r\n            Endpoint = new Uri(searchEndpoint),\r\n            IndexName = searchIndex,\r\n            Authentication = searchAuth\r\n        };",
+              "protected": "T:System.Uri"
+            },
+            "kind": "File",
+            "path": "CSharpRagApp\\Program.cs",
+            "snippet": "var dataSource = new AzureSearchChatDataSource\r\n        {\r\n            Endpoint = new Uri(searchEndpoint),\r\n            IndexName = searchIndex,\r\n            Authentication = searchAuth\r\n        };",
+            "protectedSnippet": "T:System.Uri",
+            "label": "T:System.Uri",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/networking/10.0/uri-length-limits-removed.md",
+                "isCustom": false
+              }
+            ],
+            "line": 62,
+            "column": 8
+          }
+        },
+        {
+          "incidentId": "6b260e41-d041-45a5-9d44-ff0a569e035e",
+          "ruleId": "Api.0003",
+          "description": "Breaking change: URI length limits removed ",
+          "projectPath": "CSharpRagApp\\CSharpRagApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var client = new AzureOpenAIClient(new Uri(endpoint), credential);",
+              "protected": "T:System.Uri"
+            },
+            "kind": "File",
+            "path": "CSharpRagApp\\Program.cs",
+            "snippet": "var client = new AzureOpenAIClient(new Uri(endpoint), credential);",
+            "protectedSnippet": "T:System.Uri",
+            "label": "T:System.Uri",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/networking/10.0/uri-length-limits-removed.md",
+                "isCustom": false
+              }
+            ],
+            "line": 52,
+            "column": 8
+          }
+        },
+        {
+          "incidentId": "be74a27e-ebe2-4758-9d55-ade378967e9f",
+          "ruleId": "Api.0003",
+          "description": "Breaking change: URI length limits removed ",
+          "projectPath": "CSharpRagApp\\CSharpRagApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var client = new AzureOpenAIClient(new Uri(endpoint), credential);",
+              "protected": "M:System.Uri.#ctor(System.String)"
+            },
+            "kind": "File",
+            "path": "CSharpRagApp\\Program.cs",
+            "snippet": "var client = new AzureOpenAIClient(new Uri(endpoint), credential);",
+            "protectedSnippet": "M:System.Uri.#ctor(System.String)",
+            "label": "M:System.Uri.#ctor(System.String)",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/networking/10.0/uri-length-limits-removed.md",
+                "isCustom": false
+              }
+            ],
+            "line": 52,
+            "column": 8
+          }
+        }
+      ],
+      "features": []
+    },
+    {
+      "path": "CSharpRagApp.Tests\\CSharpRagApp.Tests.csproj",
+      "startingProject": true,
+      "issues": 0,
+      "storyPoints": 0,
+      "properties": {
+        "appName": "CSharpRagApp.Tests",
+        "projectKind": "DotNetCoreApp",
+        "frameworks": [
+          "net10.0"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "numberOfFiles": 4,
+        "numberOfCodeFiles": 2,
+        "linesTotal": 2189,
+        "linesOfCode": 394,
+        "totalApiScanned": 0,
+        "minLinesOfCodeToChange": 0,
+        "maxLinesOfCodeToChange": 0
+      },
+      "ruleInstances": [],
+      "features": []
+    }
+  ],
+  "rules": {
+    "NuGet.0002": {
+      "id": "NuGet.0002",
+      "isFeature": false,
+      "description": "NuGet package upgrade is recommended for selected target framework.\n\nStandard .NET packages are recommended to have versions matching version of .NET that project targets.\n\nSome other packages also are known to work better for selected target frameworks.",
+      "label": "NuGet package upgrade is recommended",
+      "severity": "Potential",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262530",
+          "isCustom": false
+        }
+      ]
+    },
+    "NuGet.0005": {
+      "id": "NuGet.0005",
+      "isFeature": false,
+      "description": "NuGet package is deprecated.\n\nGo to its documentation and if there is a guidance for replacement of functionality provided by this package.",
+      "label": "NuGet package is deprecated",
+      "severity": "Optional",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262531",
+          "isCustom": false
+        }
+      ]
+    },
+    "Project.0002": {
+      "id": "Project.0002",
+      "isFeature": false,
+      "description": "Project\u0027s target framework(s) needs to be changed to the new target framework that you selected for this upgrade.\n\nDuring upgrade target framework will be adjusted to corresponding platform when applicable. In some cases project would result in multiple target frameworks after the upgrade if it was using features that now have their own platforms in modern .NET frameworks (windows, iOS, Android etc).",
+      "label": "Project\u0027s target framework(s) needs to be changed",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Overview of porting from .NET Framework to .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265227",
+          "isCustom": false
+        },
+        {
+          "title": ".NET project SDKs",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265226",
+          "isCustom": false
+        }
+      ]
+    },
+    "Api.0003": {
+      "id": "Api.0003",
+      "isFeature": false,
+      "description": "API has a behavioral change in selected .NET version: code and binaries may behave differently at runtime without needing recompilation, but the new behavior might be undesirable and require updates.",
+      "label": "Behavioral change in selected .NET version",
+      "severity": "Potential",
+      "effort": 1
+    },
+    "Api.0002": {
+      "id": "Api.0002",
+      "isFeature": false,
+      "description": "API is source incompatible for selected .NET version: requires code changes to compile successfully when targeting a new version, such as removing obsolete APIs or changing method signatures.",
+      "label": "Source incompatible for selected .NET version",
+      "severity": "Potential",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Breaking changes in .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262679",
+          "isCustom": false
+        }
+      ]
+    }
+  }
+}

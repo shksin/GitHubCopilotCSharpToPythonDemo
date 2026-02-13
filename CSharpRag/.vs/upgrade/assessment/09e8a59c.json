@@ -1,0 +1,124 @@
+{
+  "reportConfigHash": "09e8a59c",
+  "createdAtUtc": "2026-02-13T01:13:30.0979453Z",
+  "entries": [
+    {
+      "packageName": "Azure.AI.OpenAI",
+      "packageVersion": "2.1.0",
+      "insightsName": "Azure.AI.OpenAI",
+      "insightsCurrentVersion": "2.1.0",
+      "insightsNewVersion": "",
+      "insightsDescription": "",
+      "insightsIsCompatible": true,
+      "insightsProjects": []
+    },
+    {
+      "packageName": "Azure.Identity",
+      "packageVersion": "1.13.2",
+      "insightsName": "Azure.Identity",
+      "insightsCurrentVersion": "1.13.2",
+      "insightsNewVersion": "",
+      "insightsDescription": "NuGet package is deprecated",
+      "insightsIsCompatible": false,
+      "insightsProjects": [
+        "CSharpRagApp\\CSharpRagApp.csproj"
+      ]
+    },
+    {
+      "packageName": "Microsoft.Extensions.Configuration",
+      "packageVersion": "8.0.0",
+      "insightsName": "Microsoft.Extensions.Configuration",
+      "insightsCurrentVersion": "8.0.0",
+      "insightsNewVersion": "10.0.3",
+      "insightsDescription": "NuGet package upgrade is recommended",
+      "insightsIsCompatible": true,
+      "insightsProjects": [
+        "CSharpRagApp\\CSharpRagApp.csproj"
+      ]
+    },
+    {
+      "packageName": "Microsoft.Extensions.Configuration.EnvironmentVariables",
+      "packageVersion": "8.0.0",
+      "insightsName": "Microsoft.Extensions.Configuration.EnvironmentVariables",
+      "insightsCurrentVersion": "8.0.0",
+      "insightsNewVersion": "10.0.3",
+      "insightsDescription": "NuGet package upgrade is recommended",
+      "insightsIsCompatible": true,
+      "insightsProjects": [
+        "CSharpRagApp\\CSharpRagApp.csproj"
+      ]
+    },
+    {
+      "packageName": "Microsoft.Extensions.Configuration.Json",
+      "packageVersion": "8.0.0",
+      "insightsName": "Microsoft.Extensions.Configuration.Json",
+      "insightsCurrentVersion": "8.0.0",
+      "insightsNewVersion": "10.0.3",
+      "insightsDescription": "NuGet package upgrade is recommended",
+      "insightsIsCompatible": true,
+      "insightsProjects": [
+        "CSharpRagApp\\CSharpRagApp.csproj"
+      ]
+    },
+    {
+      "packageName": "coverlet.collector",
+      "packageVersion": "6.0.4",
+      "insightsName": "coverlet.collector",
+      "insightsCurrentVersion": "6.0.4",
+      "insightsNewVersion": "",
+      "insightsDescription": "",
+      "insightsIsCompatible": true,
+      "insightsProjects": []
+    },
+    {
+      "packageName": "FluentAssertions",
+      "packageVersion": "8.8.0",
+      "insightsName": "FluentAssertions",
+      "insightsCurrentVersion": "8.8.0",
+      "insightsNewVersion": "",
+      "insightsDescription": "",
+      "insightsIsCompatible": true,
+      "insightsProjects": []
+    },
+    {
+      "packageName": "Microsoft.NET.Test.Sdk",
+      "packageVersion": "17.14.1",
+      "insightsName": "Microsoft.NET.Test.Sdk",
+      "insightsCurrentVersion": "17.14.1",
+      "insightsNewVersion": "",
+      "insightsDescription": "",
+      "insightsIsCompatible": true,
+      "insightsProjects": []
+    },
+    {
+      "packageName": "Moq",
+      "packageVersion": "4.20.72",
+      "insightsName": "Moq",
+      "insightsCurrentVersion": "4.20.72",
+      "insightsNewVersion": "",
+      "insightsDescription": "",
+      "insightsIsCompatible": true,
+      "insightsProjects": []
+    },
+    {
+      "packageName": "xunit",
+      "packageVersion": "2.9.3",
+      "insightsName": "xunit",
+      "insightsCurrentVersion": "2.9.3",
+      "insightsNewVersion": "",
+      "insightsDescription": "",
+      "insightsIsCompatible": true,
+      "insightsProjects": []
+    },
+    {
+      "packageName": "xunit.runner.visualstudio",
+      "packageVersion": "3.1.4",
+      "insightsName": "xunit.runner.visualstudio",
+      "insightsCurrentVersion": "3.1.4",
+      "insightsNewVersion": "",
+      "insightsDescription": "",
+      "insightsIsCompatible": true,
+      "insightsProjects": []
+    }
+  ]
+}

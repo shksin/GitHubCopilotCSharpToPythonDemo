@@ -1,0 +1,204 @@
+# C# to Python Migration Demo Instructions
+
+## Demo Overview
+
+This demo shows how to convert a C# RAG (Retrieval-Augmented Generation) application to Python using GitHub Copilot. The source application `CSharpRagApp/` uses Azure OpenAI for embeddings and chat completions.
+
+---
+
+## STEP 1: Analyze the C# Application
+
+When asked to convert, first examine:
+- `CSharpRagApp/Program.cs` - Main entry point
+- `CSharpRagApp/Models/*.cs` - Data models
+- `CSharpRagApp/Services/*.cs` - Business logic
+- `CSharpRagApp/appsettings.json` - Configuration
+
+---
+
+## STEP 2: Create Python Project Structure
+
+Create a new folder `PythonRagApp/` with this structure:
+
+```
+PythonRagApp/
+├── models/           # Data models (dataclasses)
+│   └── __init__.py
+├── services/         # Business logic
+│   └── __init__.py
+├── main.py           # Entry point (replaces Program.cs)
+├── requirements.txt  # Dependencies (replaces .csproj)
+├── .env.example      # Config template (replaces appsettings.json)
+└── README.md
+```
+
+---
+
+## STEP 3: Convert Azure OpenAI SDK Calls
+
+### C# SDK → Python SDK
+
+| C# Code | Python Code |
+|---------|-------------|
+| `new OpenAIClient(new Uri(endpoint), new AzureKeyCredential(key))` | `AzureOpenAI(azure_endpoint=endpoint, api_key=key, api_version="2024-02-15-preview")` |
+| `await client.GetEmbeddingsAsync(options)` | `client.embeddings.create(model=deployment, input=texts)` |
+| `await client.GetChatCompletionsAsync(options)` | `client.chat.completions.create(model=deployment, messages=[...])` |
+
+### Package Mapping
+
+| C# NuGet Package | Python pip Package |
+|------------------|-------------------|
+| `Azure.AI.OpenAI` | `openai` |
+| `Microsoft.Extensions.Configuration` | `python-dotenv` |
+
+---
+
+## STEP 4: Convert Data Models
+
+### Rule: C# Classes → Python Dataclasses
+
+**C# Pattern:**
+```csharp
+public class Document
+{
+    public string Id { get; set; } = Guid.NewGuid().ToString();
+    public string Title { get; set; } = string.Empty;
+    public Dictionary<string, string> Metadata { get; set; } = new();
+}
+```
+
+**Python Pattern:**
+```python
+from dataclasses import dataclass, field
+from uuid import uuid4
+
+@dataclass
+class Document:
+    id: str = field(default_factory=lambda: str(uuid4()))
+    title: str = ""
+    metadata: dict[str, str] = field(default_factory=dict)
+```
+
+### Key Rules:
+1. Use `@dataclass` decorator
+2. Use `field(default_factory=...)` for mutable defaults (lists, dicts)
+3. Convert `PascalCase` properties to `snake_case`
+4. Always add type hints
+
+---
+
+## STEP 5: Convert Async Patterns
+
+### Rule: C# async/await → Python asyncio
+
+**C# Pattern:**
+```csharp
+public async Task<float[]> GenerateEmbeddingAsync(string text)
+{
+    var response = await _client.GetEmbeddingsAsync(options);
+    return response.Value.Data[0].Embedding.ToArray();
+}
+```
+
+**Python Pattern (OpenAI SDK is sync, wrap with asyncio):**
+```python
+async def generate_embedding(self, text: str) -> list[float]:
+    response = await asyncio.to_thread(
+        self._client.embeddings.create,
+        model=self._deployment_name,
+        input=[text]
+    )
+    return list(response.data[0].embedding)
+```
+
+---
+
+## STEP 6: Convert Configuration
+
+### Rule: appsettings.json → .env file
+
+**C# (appsettings.json):**
+```json
+{
+  "AzureOpenAI": {
+    "Endpoint": "https://...",
+    "ApiKey": "..."
+  }
+}
+```
+
+**Python (.env):**
+```env
+AZURE_OPENAI_ENDPOINT=https://...
+AZURE_OPENAI_API_KEY=...
+```
+
+**Python code to load:**
+```python
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
+```
+
+---
+
+## STEP 7: Convert Thread Safety
+
+### Rule: C# lock → Python threading.Lock
+
+**C# Pattern:**
+```csharp
+private readonly object _lock = new();
+lock (_lock) { _items.Add(item); }
+```
+
+**Python Pattern:**
+```python
+self._lock = threading.Lock()
+with self._lock:
+    self._items.append(item)
+```
+
+---
+
+## Type Conversion Quick Reference
+
+| C# Type | Python Type |
+|---------|-------------|
+| `string` | `str` |
+| `int` | `int` |
+| `float`, `double` | `float` |
+| `bool` | `bool` |
+| `DateTime` | `datetime` |
+| `List<T>` | `list[T]` |
+| `Dictionary<K,V>` | `dict[K, V]` |
+| `float[]` | `list[float]` |
+| `Guid.NewGuid()` | `str(uuid4())` |
+
+---
+
+## Python Dependencies (requirements.txt)
+
+```
+openai>=1.0.0
+python-dotenv>=1.0.0
+numpy>=1.24.0
+aiofiles>=23.0.0
+```
+
+---
+
+## Demo Commands
+
+After conversion, run the Python app:
+
+```bash
+cd PythonRagApp
+python -m venv venv
+venv\Scripts\activate      # Windows
+pip install -r requirements.txt
+cp .env.example .env       # Edit with your credentials
+python main.py
+```
