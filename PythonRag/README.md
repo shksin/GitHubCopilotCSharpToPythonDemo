@@ -115,7 +115,7 @@ This Python implementation is functionally equivalent to the C# version with the
    - Moq becomes unittest.mock
 
 4. **Dependencies**:
-   - Azure.AI.OpenAI → azure-ai-openai
+   - Azure.AI.OpenAI → openai (with Azure OpenAI support)
    - Azure.Identity → azure-identity
    - Microsoft.Extensions.Configuration → python-dotenv
 
