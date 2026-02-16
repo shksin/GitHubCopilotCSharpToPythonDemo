@@ -121,9 +121,8 @@ This Python implementation is functionally equivalent to the C# version with the
 
 ## Dependencies
 
-- `azure-ai-openai` - Azure OpenAI client library
+- `openai` - OpenAI Python client with Azure OpenAI support
 - `azure-identity` - Azure authentication
-- `openai` - OpenAI Python client
 - `python-dotenv` - Environment variable management
 - `pytest` - Testing framework (dev)
 - `pytest-asyncio` - Async test support (dev)

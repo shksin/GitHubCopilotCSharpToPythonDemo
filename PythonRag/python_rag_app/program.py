@@ -38,11 +38,16 @@ async def main():
 
     # Initialize Azure OpenAI client with Managed Identity
     # Use AzureCliCredential to respect az login tenant context
-    credential = AzureCliCredential()
-
-    # For Azure OpenAI with the openai package, we need to get a token
-    # The openai library expects azure_ad_token or api_key
-    token = credential.get_token("https://cognitiveservices.azure.com/.default")
+    try:
+        credential = AzureCliCredential()
+        # For Azure OpenAI with the openai package, we need to get a token
+        # The openai library expects azure_ad_token or api_key
+        token = credential.get_token("https://cognitiveservices.azure.com/.default")
+    except Exception as ex:
+        print("Error: Failed to authenticate with Azure CLI.")
+        print("Please ensure you are logged in by running: az login")
+        print(f"Details: {ex}\n")
+        return
 
     conversation_history = [
         {
