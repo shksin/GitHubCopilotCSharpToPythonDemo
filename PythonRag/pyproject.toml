@@ -8,17 +8,16 @@ version = "1.0.0"
 description = "Python RAG Application using Azure OpenAI"
 requires-python = ">=3.8"
 dependencies = [
-    "azure-ai-openai>=1.0.0b2",
+    "openai>=1.0.0",
     "azure-identity>=1.19.0",
-    "openai>=1.58.1",
-    "python-dotenv>=1.0.1",
+    "python-dotenv>=1.0.0",
 ]
 
 [project.optional-dependencies]
 test = [
-    "pytest>=8.3.4",
-    "pytest-asyncio>=0.25.2",
-    "pytest-cov>=6.0.0",
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.0.0",
 ]
 
 [tool.pytest.ini_options]

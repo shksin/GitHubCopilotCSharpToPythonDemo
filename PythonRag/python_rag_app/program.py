@@ -10,10 +10,8 @@ import os
 import sys
 from typing import List
 
-from azure.ai.openai import AzureOpenAI
-from azure.core.credentials import AzureKeyCredential
+from openai import AzureOpenAI
 from azure.identity import AzureCliCredential
-from openai import AzureOpenAI as AsyncAzureOpenAI
 
 from python_rag_app.services.citation_parser import CitationParser
 from python_rag_app.services.configuration_service import (
@@ -42,21 +40,9 @@ async def main():
     # Use AzureCliCredential to respect az login tenant context
     credential = AzureCliCredential()
 
-    # Configure Azure AI Search data source
-    search_auth = (
-        {"type": "SystemAssignedManagedIdentity"}
-        if not config.search_api_key
-        else {"type": "ApiKey", "key": config.search_api_key}
-    )
-
-    data_source = {
-        "type": "azure_search",
-        "parameters": {
-            "endpoint": config.search_endpoint,
-            "index_name": config.search_index,
-            "authentication": search_auth,
-        },
-    }
+    # For Azure OpenAI with the openai package, we need to get a token
+    # The openai library expects azure_ad_token or api_key
+    token = credential.get_token("https://cognitiveservices.azure.com/.default")
 
     conversation_history = [
         {
@@ -74,7 +60,7 @@ async def main():
         try:
             client = AzureOpenAI(
                 azure_endpoint=config.azure_openai_endpoint,
-                credential=credential,
+                azure_ad_token=token.token,
                 api_version="2024-02-15-preview",
             )
             test_response = client.chat.completions.create(
@@ -91,10 +77,8 @@ async def main():
         # Now try with RAG
         print("Starting RAG query...")
         await send_query_async(
-            config.azure_openai_endpoint,
-            config.chat_deployment,
-            credential,
-            data_source,
+            config,
+            token.token,
             conversation_history,
             query,
         )
@@ -110,10 +94,8 @@ async def main():
             break
 
         await send_query_async(
-            config.azure_openai_endpoint,
-            config.chat_deployment,
-            credential,
-            data_source,
+            config,
+            token.token,
             conversation_history,
             query,
         )
@@ -122,10 +104,8 @@ async def main():
 
 
 async def send_query_async(
-    endpoint: str,
-    deployment: str,
-    credential: AzureCliCredential,
-    data_source: dict,
+    config: RagConfiguration,
+    azure_ad_token: str,
     conversation_history: List[dict],
     query: str,
 ):
@@ -133,16 +113,32 @@ async def send_query_async(
     try:
         conversation_history.append({"role": "user", "content": query})
 
+        # Configure Azure AI Search data source
+        search_auth = (
+            {"type": "SystemAssignedManagedIdentity"}
+            if not config.search_api_key
+            else {"type": "ApiKey", "key": config.search_api_key}
+        )
+
+        data_source = {
+            "type": "azure_search",
+            "parameters": {
+                "endpoint": config.search_endpoint,
+                "index_name": config.search_index,
+                "authentication": search_auth,
+            },
+        }
+
         # Create client for RAG queries
         client = AzureOpenAI(
-            azure_endpoint=endpoint,
-            credential=credential,
+            azure_endpoint=config.azure_openai_endpoint,
+            azure_ad_token=azure_ad_token,
             api_version="2024-02-15-preview",
         )
 
         # Create completion with data sources
         response = client.chat.completions.create(
-            model=deployment,
+            model=config.chat_deployment,
             messages=conversation_history,
             extra_body={"data_sources": [data_source]},
         )
