@@ -1,0 +1,12 @@
+# Azure OpenAI and AI Services
+azure-ai-openai==1.0.0b2
+azure-identity==1.19.0
+openai==1.58.1
+
+# Configuration
+python-dotenv==1.0.1
+
+# Testing
+pytest==8.3.4
+pytest-asyncio==0.25.2
+pytest-cov==6.0.0
