@@ -162,7 +162,7 @@ This Python implementation maintains behavioral parity with the original C# appl
 
 ## Dependencies
 
-- **azure-ai-openai**: Azure OpenAI SDK for Python
+- **openai**: OpenAI Python SDK with Azure OpenAI support
 - **azure-identity**: Azure authentication using managed identities
 - **python-dotenv**: Load environment variables from .env file
 - **pytest**: Testing framework (dev dependency)

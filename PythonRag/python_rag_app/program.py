@@ -8,12 +8,9 @@ import os
 import sys
 from typing import Any
 
-from azure.ai.openai import AzureOpenAI
-from azure.core.credentials import AzureKeyCredential
-from azure.core.exceptions import HttpResponseError
 from azure.identity import AzureCliCredential
 from dotenv import load_dotenv
-from openai import AzureOpenAI as AsyncAzureOpenAI
+from openai import AzureOpenAI
 from openai.types.chat import ChatCompletion
 
 from python_rag_app.services.citation_parser import CitationParser
@@ -42,12 +39,15 @@ async def main() -> None:
     # Use AzureCliCredential to respect az login tenant context
     credential = AzureCliCredential()
 
+    # Get token provider for Azure OpenAI
+    def get_token():
+        """Get Azure AD token for OpenAI."""
+        return credential.get_token("https://cognitiveservices.azure.com/.default").token
+
     # Initialize the OpenAI client
     client = AzureOpenAI(
         azure_endpoint=config.azure_openai_endpoint,
-        azure_ad_token_provider=lambda: credential.get_token(
-            "https://cognitiveservices.azure.com/.default"
-        ).token,
+        azure_ad_token_provider=get_token,
         api_version="2024-08-01-preview",
     )
 
@@ -168,13 +168,10 @@ async def send_query(
 
         conversation_history.append({"role": "assistant", "content": answer})
 
-    except HttpResponseError as ex:
-        print(f"Error: {ex.message}")
-        print(f"Status: {ex.status_code}")
-        print(f"Details: {ex.error}")
-        print()
     except Exception as ex:
         print(f"Error: {type(ex).__name__}: {ex}")
+        if hasattr(ex, "status_code"):
+            print(f"Status: {ex.status_code}")
         print()
 
 
